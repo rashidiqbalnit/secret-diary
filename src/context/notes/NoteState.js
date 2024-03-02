@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React, { useContext } from "react";
 import NoteContext  from "./noteContext";
 
 const NoteState=(props)=>{
@@ -88,13 +89,15 @@ const NoteState=(props)=>{
     }
 
     //Edit a Note
-    const editNote=()=>{
+    const editNote=(id, title, description, tag)=>{
       
     }
 
     //Delete a Note
-    const deleteNote=()=>{
-      
+    const deleteNote=(id)=>{
+      console.log("deleting note by id"+id);
+      const newNotes = notes.filter((note)=>{return note._id!==id})
+      setNotes(newNotes);
     }
 
 
