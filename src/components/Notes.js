@@ -27,7 +27,6 @@ const Notes = () => {
     refClose.current.click();
     //addNote(note.title, note.description, note.tag);
    }
-   
    const onChange=(e)=>{
    setNote({...note, [e.target.name]: e.target.value})
   }

@@ -14,16 +14,17 @@ const JWT_SECRET = "Harryisagoodb$oy"
      body('email', 'Enter a valid email').isEmail(),
      body('password', 'Password must be atleast 5 characters').isLength({ min: 5 }),
    ], async (req, res) => {
+    let success = false;
   // If there are errors, return Bad request and the errors
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
+    return res.status(400).json({success, errors: errors.array() });
   }
   // Check whether the user with this email exists already
   try {
     let user = await User.findOne({ email: req.body.email });
     if (user) {
-      return res.status(400).json({ error: "Sorry a user with this email already exists" })
+      return res.status(400).json({success, error: "Sorry a user with this email already exists" })
     }
 
     //making secure password
@@ -46,8 +47,8 @@ const JWT_SECRET = "Harryisagoodb$oy"
     //console.log(jwtData)
 
     //res.json(user)
-
-    res.json({authtoken})
+    success = true;
+    res.json({success, authtoken})
     
   } catch (error) {
     console.error(error.message);

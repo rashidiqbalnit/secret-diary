@@ -22,16 +22,16 @@ const AddNote = () => {
         <form className="my-3">
           <div className="mb-3">
             <label htmlFor="title" className="form-label">Title</label>
-            <input type="text" className="form-control" id="title" name="title" aria-describedby="emailHelp" onChange={onChange} value={note.title} minLength={5} required/>
+            <input type="text" className="form-control" id="title" name="title" aria-describedby="emailHelp" onChange={onChange} value={note.title} required/>
           </div>
           <div className="mb-3">
             <label htmlFor="tag" className="form-label">Tag</label>
-            <input type="text" className="form-control" id="tag" name="tag" onChange={onChange} value={note.tag} minLength={5} required/>
+            <input type="text" className="form-control" id="tag" name="tag" onChange={onChange} value={note.tag} required/>
           </div>
           <div className="mb-3">
             <label htmlFor="description" className="form-label">Description</label>
             {/*<input type="text" className="form-control" id="description" name="description" onChange={onChange}/>*/}
-            <textarea id="message" rows="3" cols="146" placeholder="write here ...." type="message" className="form-control" name="description" onChange={onChange} value={note.description} minLength={5} required></textarea>
+            <textarea id="message" rows="3" cols="146" placeholder="write here ...." type="message" className="form-control" name="description" onChange={onChange} value={note.description} required></textarea>
           </div>
           <button type="submit" className="btn btn-primary" onClick={handleClick}>Add Note</button>
         </form>
