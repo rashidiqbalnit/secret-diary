@@ -32,7 +32,7 @@ const AddNote = (props) => {
           <div className="mb-3">
             <label htmlFor="description" className="form-label">Description</label>
             {/*<input type="text" className="form-control" id="description" name="description" onChange={onChange}/>*/}
-            <textarea id="message" rows="3" cols="146" placeholder="write here ...." type="message" className="form-control" name="description" onChange={onChange} value={note.description} required></textarea>
+            <textarea id="message" rows="3" cols="146" placeholder="write atleast five char...." type="message" className="form-control" name="description" onChange={onChange} value={note.description} required></textarea>
           </div>
           <button type="submit" className="btn btn-primary" onClick={handleClick}>Add Note</button>
         </form>
