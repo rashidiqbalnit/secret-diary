@@ -7,7 +7,7 @@ const Login = (props) => {
 
     const handleSubmit= async (e)=>{
         e.preventDefault();
-        //fetch()
+
         const response = await fetch("http://localhost:5000/api/auth/login", {
             method: "POST",
             headers: {
@@ -21,9 +21,10 @@ const Login = (props) => {
             //Save the auth token and redirect.
             localStorage.setItem('token',json.authtoken);
             navigate('/');
+            props.showAlert("Logged in Successfully","success");
           }
           else{
-            alert('Invalid Credentiasls')
+            props.showAlert("Invalid Details","danger");
           }
     }
     
